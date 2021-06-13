@@ -1,5 +1,6 @@
 /* eslint-disable default-case */
 /* eslint-disable consistent-return */
+import moment from 'moment';
 import { monthArray } from '../config/index';
 
 export const completeWith0 = (n) =>
@@ -21,9 +22,7 @@ export const transformDate = ({ date, lang, type }) => {
 						month ? `${completeWith0(month)}/` : ''
 				  }${year}`
 				: lang === 'ptBr'
-				? `${day ? `${completeWith0(day)}/` : ''}${
-						month ? `${completeWith0(month)}/` : ''
-				  }${year}`
+				? moment(date).format('DD/MM/YYYY')
 				: /* lang === 'de' */
 				  `${
 						day && month
