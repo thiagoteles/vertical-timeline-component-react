@@ -3,7 +3,7 @@
 	"version": "1.0.3",
 	"description": "A simple component for create a vertical timeline with Reactjs",
 	"main": "build/index.js",
-	"repository": "https://github.com/Proskynete/vertical-timeline-component-react",
+	"repository": "https://github.com/thiagoteles/vertical-timeline-component-react",
 	"author": {
 		"name": "Eduardo Alvarez",
 		"email": "eduardo.a1993@gmail.com"
