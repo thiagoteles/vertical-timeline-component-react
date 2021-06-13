@@ -20,16 +20,22 @@ export const transformDate = ({ date, lang, type }) => {
 				? `${day ? `${completeWith0(day)}/` : ''}${
 						month ? `${completeWith0(month)}/` : ''
 				  }${year}`
+				: lang === 'ptBr'
+				? `${day ? `${completeWith0(day)}/` : ''}${
+						month ? `${completeWith0(month)}/` : ''
+				  }${year}`
 				: /* lang === 'de' */
 				  `${
 						day && month
 							? `${completeWith0(day)}.${completeWith0(month)}.${year}`
 							: `${month ? `${completeWith0(month)}/` : ''}${year}`
-				  }`;
+				  }`
 		case 'l':
 			return lang === 'en'
 				? `${month ? `${month}/` : ''}${day ? `${day}/` : ''}${year}`
 				: lang === 'es'
+				? `${day ? `${day}/` : ''}${month ? `${month}/` : ''}${year}`
+				: lang === 'ptBr'
 				? `${day ? `${day}/` : ''}${month ? `${month}/` : ''}${year}`
 				: /* lang === 'de' */
 				  `${
@@ -43,6 +49,10 @@ export const transformDate = ({ date, lang, type }) => {
 						day ? ` ${completeWith0(day)}` : ''
 				  }${day || month ? ', ' : ''}${year}`
 				: lang === 'es'
+				? `${day ? `${day} de ` : ''}${
+						month ? `${monthArray[lang][month - 1]}, ` : ''
+				  }${year}`
+				: lang === 'ptBr'
 				? `${day ? `${day} de ` : ''}${
 						month ? `${monthArray[lang][month - 1]}, ` : ''
 				  }${year}`
@@ -68,5 +78,10 @@ export const mapDate = {
 		L: (date) => transformDate({ date, lang: 'de', type: 'L' }),
 		l: (date) => transformDate({ date, lang: 'de', type: 'l' }),
 		ll: (date) => transformDate({ date, lang: 'de', type: 'll' }),
+	},
+	ptBr: {
+		L: (date) => transformDate({ date, lang: 'ptBr', type: 'L' }),
+		l: (date) => transformDate({ date, lang: 'ptBr', type: 'l' }),
+		ll: (date) => transformDate({ date, lang: 'ptBr', type: 'll' }),
 	},
 };

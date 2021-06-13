@@ -55,6 +55,20 @@ export const monthArray = {
 		'Nov.',
 		'Dez.',
 	],
+	ptBr: [
+		'Jan',
+		'Fev',
+		'Mar',
+		'Abr',
+		'Mai',
+		'Jun',
+		'Jul',
+		'Ago',
+		'Set',
+		'Out',
+		'Nov',
+		'Dez',
+	],
 };
 
 export const mapText = {
@@ -69,5 +83,9 @@ export const mapText = {
 	de: {
 		from: 'Von',
 		to: 'Bis',
+	},
+	ptBr: {
+		from: 'De',
+		to: 'Até',
 	},
 };
